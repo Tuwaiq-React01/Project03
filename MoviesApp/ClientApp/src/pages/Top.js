@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Movie from '../components/Movie';
+import axios from 'axios';
 
 export default class Top extends Component {
     static displayName = Top.name;

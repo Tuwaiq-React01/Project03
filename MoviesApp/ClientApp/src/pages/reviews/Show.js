@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Review from '../../components/Review';
 import { Card, CardBody, Button, Col } from 'reactstrap';
 import { Redirect } from "react-router-dom";
+import axios from 'axios';
 
 export default class Reviews extends Component {
     static displayName = Reviews.name;
