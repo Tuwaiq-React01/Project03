@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import Movie from '../components/Movie';
 
@@ -47,8 +48,7 @@ export default class Home extends Component {
     }
 
     async populateMovies() {
-        const response = await fetch(process.env.REACT_APP_API + 'movies');
-        const data = await response.json();
+        const { data } = await axios.get(process.env.REACT_APP_API + 'movies');
         this.setState({ movies: data.$values, loading: false });
     }
 }

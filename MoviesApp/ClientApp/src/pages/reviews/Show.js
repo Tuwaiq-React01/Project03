@@ -71,9 +71,16 @@ export default class Reviews extends Component {
 
     async deleteReview(review) {
         const movie = this.state.movie;
-        fetch(process.env.REACT_APP_API + `movies/${movie.id}/reviews/${review.id}`, {method: 'DELETE'})
-        .catch((error) => {
-            console.error(`Failed to delete review with the id: ${review.id}`);
+        
+        axios({
+            url: process.env.REACT_APP_API + `movies/${movie.id}/reviews/${review.id}`,
+            method: 'DELETE',
+            data: review,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).catch((error) => {
+            console.error(`Failed to delete a review with the id: ${review.id}`);
             console.error(`Error message: ${error}`);
         });
     }

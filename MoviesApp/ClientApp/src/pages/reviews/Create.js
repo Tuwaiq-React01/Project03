@@ -44,13 +44,16 @@ export default class Create extends Component {
     }
 
     async postReview(review) {
-        fetch(process.env.REACT_APP_API + `movies/${this.props.location.state.movie.id}/reviews`,
-        {
+        axios({
+            url: process.env.REACT_APP_API + `movies/${this.props.location.state.movie.id}/reviews`,
             method: "POST",
-            body: JSON.stringify(review),
+            data: review,
             headers: {
                 'Content-Type': 'application/json'
             }
+        }).catch((error) => {
+            console.error(`Failed to create a review`);
+            console.error(`Error message: ${error}`);
         });
     }
 }

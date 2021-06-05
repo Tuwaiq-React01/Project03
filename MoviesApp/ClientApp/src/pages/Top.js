@@ -47,8 +47,7 @@ export default class Top extends Component {
     }
 
     async populateTopMovies() {
-        const response = await fetch(process.env.REACT_APP_API + 'movies?top=true');
-        const data = await response.json();
+        const { data } = await axios.get(process.env.REACT_APP_API + 'movies?top=true');
         this.setState({ movies: data.$values, loading: false });
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import axios from 'axios';
 
 export default class edit extends Component {
     constructor(props) {
@@ -69,13 +70,16 @@ export default class edit extends Component {
             return value.id == review.ID ? review : value;
         });
 
-        fetch(process.env.REACT_APP_API + `movies/${review.MovieID}/reviews/${review.ID}`,
-        {
+        axios({
+            url: process.env.REACT_APP_API + `movies/${review.MovieID}/reviews/${review.ID}`,
             method: "PUT",
-            body: JSON.stringify(review),
+            data: review,
             headers: {
                 'Content-Type': 'application/json'
             }
+        }).catch((error) => {
+            console.error(`Failed to edit a review with the id: ${review.id}`);
+            console.error(`Error message: ${error}`);
         });
         
         this.setState({movie: movie, redirect: true});
