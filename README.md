@@ -21,3 +21,5 @@
   بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
 
   </div>
+
+  ![Homepage screenshot](website_homepage.png "Screenshot of the website homepage")
