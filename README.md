@@ -1,14 +1,13 @@
- <div dir="rtl">
-  
-# مشروع الأسبوع الثالث | Project 03 
-## الوصف
-في هذا المشروع، سيتم تحويل المشروع السابق التابع للأسبوع الثاني إلى function component مع تطبيق المتطلبات أدناه
-## المتطلبات
-- استخدام مكتبة react-router-dom 
-- استخدام Third-Party-Authentication 
-- استخدام دالتين على الأقل من دوال Hooks
+# Movies
+## Built with
+- React
+- Bootstrap
+- OAuth
 
-### ملاحظة
-يجب إرفاق صورة من المشروع في ملف README.md
-  
-</div>
+## Demo
+[GitHub Pages](https://raneen-z.github.io/Project03/)
+
+### OAuth
+OAuth only works on localhost
+<img src="login1.png" width="500px"/>
+<img src="login2.png" width="500px"/>

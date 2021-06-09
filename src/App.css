@@ -1,0 +1,22 @@
+body{
+  background-color: rgb(231, 231, 231) ;
+}
+
+.card-movie {
+  color: rgb(49, 49, 49);
+  background :rgba(93, 23, 73,0.3); 
+  overflow: hidden;
+}
+.card-movie img {
+  transition: all 0.9s;
+ }
+
+.card-movie:hover img {
+ transform: scale(1.1) translateY(-20px);
+}
+
+.one-movie {
+  margin-top: 20px;
+  background :rgba(93, 23, 73,0.3); 
+  overflow: hidden;
+}
