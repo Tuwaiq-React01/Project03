@@ -4,17 +4,17 @@ import WeaterData from './weatherapi';
 function App() {
   const [weatherdata, setWeatherData] = useState(null);
   const [city, setCity] = useState('Dammam');
-  const [loading, setLoading] = useState(false);
+  const [load, setload] = useState(false);
 
   const getData = async () => {
     try{
-        setLoading(true);
+        setload(true);
         const data = await WeaterData(city);
         setWeatherData(data);
-        setLoading(false);
+        setload(false);
     }catch(error) {
       console.log(error.message);
-      setLoading(false);
+      setload(false);
     }
   }
   
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <div className="card">
-   <h2 className="title"><i className="fa fa-cloud"></i>Weather App</h2>
+   <h2 className="title"> Weather App</h2>
         <div className="search-form">
           <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
           <button  onClick={() => getData()}>Search</button>
@@ -32,7 +32,7 @@ function App() {
       
           {weatherdata !== null ? (
           <div className="main-container">
-            <h4>Live Weather Condition</h4>
+            <h4>Get Weather </h4>
             <div className="weather-icon">
               <img src={`http://openweathermap.org/img/w/${weatherdata.weather[0].icon}.png`} />
             </div>
@@ -43,7 +43,7 @@ function App() {
             <div className="location">
               <h3><i className="View"></i>{weatherdata.name} || {weatherdata.sys.country}</h3>
             </div>
-            <div className="temprature-range">
+            <div >
               <h6>  Humidity: {weatherdata.main.humidity}%</h6>
               <h6> feels like : {weatherdata.main.feels_like}</h6>
               <h6> Pressure : {weatherdata.main.pressure}</h6>

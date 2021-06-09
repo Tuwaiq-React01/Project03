@@ -7,15 +7,9 @@ export default function Login() {
   const [token,setToken] = useState("");
 
   const responseFacebook = (response) => {
-     if (response.status !== "unknown") {
       setName(response.name)
       setEmail(response.email)
       setToken(response.accessToken)
-      console.log(response)
-     }
-     else {
-       console.log("you are not singned in");
-     }
   }
     return (
       <div className="card">

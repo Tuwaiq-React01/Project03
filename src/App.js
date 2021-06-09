@@ -16,9 +16,9 @@ export default function App() {
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <ul >
-          <li>  <Link to="/">Home</Link> </li>
-          <li> <Link to="/About">About</Link> </li>
-          <li>  <Link to="/LogIn">Log In</Link> </li>
+          <li class="navbar-brand">  <Link to="/">Home</Link> </li>
+          <li class="navbar-brand"> <Link to="/About">About</Link> </li>
+          <li class="navbar-brand">  <Link to="/LogIn">Log In</Link> </li>
         </ul>
         </nav>
 
