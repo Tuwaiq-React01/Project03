@@ -8,7 +8,7 @@
   React Router and Hooks
   <br>
 </h1>
-<h4 align="center">Implement React Router and 3rd Part Auth</h4>
+<h4 align="center">Implement React Router, Hooks, and 3rd Party Auth</h4>
 
 ## [► Live Demo](https://younesalturkey.github.io/Project02/)
 
@@ -45,6 +45,6 @@
 
 المتدرب يونس التركي
 
-المجموعة البحر الآحمر
+المجموعة البحر الاحمر
 
 </div>
