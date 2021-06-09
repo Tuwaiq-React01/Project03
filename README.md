@@ -1,3 +1,39 @@
+# GameReview (Functional)
+
+### PROJECT3: 
+Built using
+- React JS (Functional Components)
+- Bootsrap
+- Axios
+
+## DEMO PICTURE:
+![demo1](./demo0.png)
+
+## DEMO Gif Showcase:
+![demo1](./demo1.gif)
+
+## DEMO Gif Search:
+![demo1](./demo2.gif)
+
+
+<br />
+<b> Student:</b>  Mohammed Rashed Albalawi.
+<br />
+<b> Group:</b>  Al-qiddiyah.
+<br />
+<b> Group Supervisor:</b>  Noorah Abdullah.
+
+
+<br />
+<hr />
+<br />
+
+
+
+
+
+
+
  <div dir="rtl">
   
 # مشروع الأسبوع الثالث | Project 03 
