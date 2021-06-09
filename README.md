@@ -15,7 +15,7 @@
 <br/>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YounesAlturkey/Project03/main/public/demo-img.png" alt="demo"/>
+  <img src="https://github.com/YounesAlturkey/Project03/blob/main/public/demo.gif" alt="demo"/>
 </p>
 
 <div dir="rtl">
