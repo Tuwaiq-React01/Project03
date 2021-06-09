@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" component={MainScreen} exact />
+          <Route path="/Project03" component={MainScreen} exact />
           <Route component={NotFoundScreen} />
         </Switch>
       </Router>

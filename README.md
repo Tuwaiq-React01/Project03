@@ -1,6 +1,28 @@
- <div dir="rtl">
+# مشروع الأسبوع الثالث | Project 03
+
+<h1 align="center">
+  <br>
+  <a href="https://safcsp.org.sa" target="_blank">
+  <img src="https://raw.githubusercontent.com/tuwaiq-dotnet/json-parser-team-yaai/main/logo.png" alt="Tuwaiq Logo" width="80"></img></a>
+  <br>
+  React Router and Hooks
+  <br>
+</h1>
+<h4 align="center">Implement React Router and 3rd Part Auth</h4>
+
+## [► Live Demo](https://younesalturkey.github.io/Project02/)
+
+<br/>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/YounesAlturkey/Project03/main/public/demo.png" alt="demo"/>
+</p>
+
+<div dir="rtl">
+
+  <br/>
+  <br/>
   
-# مشروع الأسبوع الثالث | Project 03 
 ## الوصف
 في هذا المشروع، سيتم تحويل المشروع السابق التابع للأسبوع الثاني إلى function component مع تطبيق المتطلبات أدناه
 ## المتطلبات
@@ -9,6 +31,20 @@
 - استخدام دالتين على الأقل من دوال Hooks
 
 ### ملاحظة
+
 يجب إرفاق صورة من المشروع في ملف README.md
-  
+
+</div>
+<br/>
+
+  <div align="right">
+
+## معلومات المتدرب
+
+المدربة في العتيبي
+
+المتدرب يونس التركي
+
+المجموعة البحر الآحمر
+
 </div>
