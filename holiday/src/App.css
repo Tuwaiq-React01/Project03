@@ -1,0 +1,22 @@
+.holiday{
+  margin: 10px;
+  box-shadow: 1px 2px 8px rgba(0,0,0,0.2);
+  min-height: 100PX;
+  max-height: 1 00px;
+  padding: 10PX;
+  background-color: darkcyan;
+}
+
+span{
+  display:block;
+  color: antiquewhite;
+}
+
+h1{
+  color: burlywood;
+}
+
+.holiday-body{
+  display:grid;
+  grid-template-columns: repeat(2,50%);
+}
