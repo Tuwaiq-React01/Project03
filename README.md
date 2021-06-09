@@ -1,25 +1,21 @@
+# MoviesApp
+live demo: [MoviesApp](https://ahmedtuwaiqmoviesapp.azurewebsites.net/)
 
-<div dir="rtl">
-  
- # مشروع الإسبوع الثاني 
-  
-  <br/>
-  <br/>
-  
-  ## الوصف
-اختيار فكرة المشروع راجعة للطالب بحيث يتم ادراج المتطلبات ادناه كاملةً. 
-<br>
-<br>
+This is a movie web application which include a
+- Restful .net core api with all CRUD operations
+- React as the frontend app with these pages
+    - Home
+    - Top Movies
+    - Reviews
 
-##  المتطلبات 
-- تطبيق State
-- تطبيق دالتين على الأقل من دوال Lifecycle
-- تطبيق axios
-
-  
-   **ملاحظة** :
-  بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
-
-  </div>
-
-  ![Homepage screenshot](website_homepage.png "Screenshot of the website homepage")
+## Technology stack
+- Asp<span>.net</span> core 5
+    - EntityFrameworkCore
+    - EntityFrameworkCore SqlServer
+    - EntityFrameworkCore Relational
+    - EntityFrameworkCore Tools
+        - Migrations
+    - AspNetCore Diagnostics EntityFrameworkCore
+- React
+    - Reactstrap
+    - React Router
