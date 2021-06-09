@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Net.Http.Headers;
 using MoviesApp.Data;
 
 namespace MoviesApp
@@ -40,7 +41,8 @@ namespace MoviesApp
                 options.AddPolicy(name: "enable_localhost",
                 builder =>
                 {
-                    builder.WithOrigins("https://localhost:44386");
+                    builder.WithOrigins("https://localhost:5001");
+                    builder.WithHeaders(HeaderNames.ContentType, "application/json");
                 });
             });
         }
