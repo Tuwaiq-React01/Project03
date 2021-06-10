@@ -2,7 +2,7 @@ import "./App.css";
 // import NavBar from "./components/NavBar";
 import Favorite from "./components/Favorite";
 import Footer from "./components/Footer";
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AllGames from "./components/AllGames";
 import Search from "./components/Search";
@@ -38,9 +38,12 @@ function App() {
     setFav([]);
   }
   const removeFav = (game) =>  {
-    // let newArr = fav.splice(game, 1)
-    // setFav([newArr]);
+    const getIndex = fav.findIndex(x => x.id == game.id)
+    fav.splice(getIndex, 1)
+    setFav([...fav])
+    console.log("SETTING NOW! " , fav);
   }
+
 
   const searchButton = () => {
     // console.log("test");

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <div className="mt-5">
       <footer
-        className="footer fixed-bottom mt-auto py-3"
+        className="footer mt-auto py-3"
         style={{ backgroundColor: "#4b4455" }}
       >
         <div class="container">
