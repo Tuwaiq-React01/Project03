@@ -10,19 +10,16 @@ Built using:
 	 - [x] UseState
 	 - [x] UseEffect
 	 - [x] UseRef
- - [x] Bootstrap
- - [x] Axios
- - [x] Third-party-Authentication
+ - [x] Bootstrap.
+ - [x] Axios.
+ - [x] Search-bar.
+ - [x] Third-party-Authentication (Using Facebook).
 
 ## DEMO PICTURE:
 ![demo1](./demo0.png)
 
-## DEMO Gif Showcase:
+## DEMO Gif Showcase (3rd party Authentication):
 ![demo1](./demo1.gif)
-
-## DEMO Gif Search:
-![demo1](./demo2.gif)
-
 
 
 ### <b> Student:</b>  Mohammed Rashed Albalawi.

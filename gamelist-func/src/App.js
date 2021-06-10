@@ -14,6 +14,8 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import About from "./components/About";
 import FacebookLogin from "react-facebook-login";
 
+
+// APP -> ALLGAMES -> GAMES
 function App() {
   // let games = [
   //   { gameName: "gta", id: 1 },
@@ -29,7 +31,7 @@ function App() {
   const [email, setEmail] = useState("");
 
   const addToFav = (game) => {
-    console.log(game);
+    console.log("zzzzzzzz", game);
     var search = fav.find((e) => game.id == e.id);
     if (search) {
       alert("ALREADY THERE!");
@@ -38,15 +40,11 @@ function App() {
     }
   };
 
-
   const setInfo = (n, t, e) => {
-    console.log('OOOOOOOOO', n);
     setName(n);
     setToken(t);
     setEmail(e);
-  }
-
-
+  };
 
   const removeAll = () => {
     setFav([]);
@@ -105,9 +103,8 @@ function App() {
                       <AiFillInfoCircle size={30} /> About
                     </Link>
                   </li>
-                  
                 </ul>
-                
+
                 <form class="d-flex">
                   <input
                     class="form-control me-sm-2 m-2"
@@ -125,20 +122,22 @@ function App() {
                     </button>
                   </Link>
 
-                    {token? <Link className="nav-link text-light" to="/logout">
-                       LOGOUT
-                    </Link> : null}
-
-
-
-
+                  {token ? (
+                    <Link className="nav-link text-light" to="/logout">
+                      LOGOUT
+                    </Link>
+                  ) : null}
                 </form>
               </div>
             </div>
           </nav>
 
           <Switch>
-            <Route exact path="/" render={() => <HomePage setInfo={setInfo} />} />
+            <Route
+              exact
+              path="/"
+              render={() => <HomePage setInfo={setInfo} />}
+            />
 
             <Route
               exact
@@ -163,7 +162,7 @@ function App() {
               render={() => <Search target={searchInput} addToFav={addToFav} />}
             />
 
-<Route
+            <Route
               path="/logout"
               render={() => <HomePage setInfo={setInfo} />}
             />

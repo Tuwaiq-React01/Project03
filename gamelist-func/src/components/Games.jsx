@@ -8,26 +8,16 @@ export default function Games(props) {
 
 
   useEffect(() => {
-    console.log("aaaaaaaaaa", favs);
     setGames(props.list);
     
 
     if (prevFavsRef.current) {
       prevFavsRef.current = false;
     } else {
-        console.log("JJJJJJJJJJJJ", favs);
         props.addToFav(favs);
     }
 
   }, [favs]);
-
-
-
-  // useEffect(() => {
-  //   console.log("JJJJJJJJJJJJ", favs);
-    // props.addToFav(favs);
-  // }, [favs])
-
 
 
   const addFav = (game) => {

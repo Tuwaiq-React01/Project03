@@ -33,7 +33,6 @@ export default function AllGames(props) {
 
   
   const addToFav = (game) => {
-    console.log("TEST");
     props.addToFav(game);
   }
 
