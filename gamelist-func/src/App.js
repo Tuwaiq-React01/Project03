@@ -10,6 +10,8 @@ import HomePage from "./components/HomePage";
 import { MdGames } from "react-icons/md";
 import { BsFillHeartFill } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
+import { AiFillInfoCircle } from "react-icons/ai";
+import About from "./components/About";
 
 function App() {
   // let games = [
@@ -54,7 +56,7 @@ function App() {
           >
             <div class="container-fluid">
               <a class="navbar-brand" href="/">
-                Game
+                GameList
               </a>
               <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
@@ -77,9 +79,9 @@ function App() {
                     </Link>
                   </li>
                   <li class="nav-item mx-4">
-                    <a class="nav-link" href="#">
-                      About
-                    </a>
+                  <Link className="nav-link" to="/about">
+                      <AiFillInfoCircle size={30} /> About
+                    </Link>
                   </li>
                   <li></li>
                 </ul>
@@ -124,6 +126,9 @@ function App() {
               )}
             />
 
+<Route exact path="/about" render={() => <About />} />
+
+
             <Route
               path="/search"
               render={() => <Search target={searchInput} addToFav={addToFav} />}
@@ -132,7 +137,7 @@ function App() {
         </div>
       </Router>
 
-      <Footer />
+      <Footer/>
     </>
   );
 }
