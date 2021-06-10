@@ -1,0 +1,201 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: rgba(211, 211, 211, 0.623);
+}
+
+.game-filter {
+  background-color: rgba(128, 128, 128, 0.383);
+  background-color: #ccc;
+  color: white;
+  text-align: center;
+  text-decoration: solid;
+  font-size: 0.75em;
+  padding: 0.5em;
+  margin: 0 0 0.1em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.game-filter:hover {
+  background-color: rgba(121, 121, 121, 0.644);
+  color: white;
+}
+
+.is-active {
+  background-color: rgb(71, 197, 255);
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.is-active:hover {
+  background-color: rgb(0, 162, 255);
+}
+
+.game-count {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 0.25em 0.25em 0.25em 0.5em;
+  border-radius: 20%;
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+
+.select {
+  margin: auto 0 auto 6px;
+  vertical-align: middle;
+  text-align: center;
+  width: 50px;
+  border-right: 2px solid white;
+}
+
+.fave {
+  width: 50px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  border-right: 2px solid white;
+}
+
+.is-fave {
+  background-color: rgb(255, 32, 32);
+}
+
+.completed {
+  width: 50px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  border-right: 2px solid white;
+}
+
+.is-completed {
+  background-color: rgba(0, 128, 0, 0.753);
+}
+
+.later {
+  max-width: 50px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  border-right: 2px solid white;
+}
+
+.is-later {
+  background-color: rgb(250, 250, 138);
+}
+
+.ongoing {
+  max-width: 50px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  border-right: 2px solid white;
+}
+
+.is-ongoing {
+  background-color: rgb(124, 218, 255);
+}
+
+.delete {
+  max-width: 50px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  border-right: 2px solid white;
+
+}
+
+.delete:hover {
+  background-color: red;
+}
+
+.edit {
+  max-width: 50px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+
+}
+
+.edit:hover {
+  background-color: yellow;
+}
+
+.input {
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.26);
+}
+
+.top-bar{
+  padding: 10px 0;
+  background-color: darkgrey;
+}
+
+.game-row {
+  border: 0;
+  box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.26);
+  padding: 25px 0;
+}
+
+.edit-form {
+  margin-top: 10px;
+}
