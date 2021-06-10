@@ -1,0 +1,141 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60");
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(15, 11, 7);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+strong{
+  color:rgb(255, 255, 255);
+}
+
+
+.card {
+  background-color: rgba(10, 3, 3, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+  transition: 0.3s;
+  width: 30%;
+  /* height: 100px; */
+  word-wrap: break-word;
+  justify-content: space-between;
+  float: left;
+  margin-left: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+
+}
+
+.block-text {
+  color: blanchedalmond;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+.image{
+
+  width: 100%; 
+  height : 300px; 
+  
+
+}
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.6);
+}
+
+.btn{
+  background-color:peru;
+  border: none;
+  color:black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 16px;
+  
+  cursor: pointer;
+
+  position: center;
+  bottom:10px;
+  
+  border-radius: 8px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+
+.inputTag{
+  
+  border: none;
+  color:black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 16px;
+  
+  cursor: pointer;
+
+  position: center;
+  bottom:10px;
+  
+  border-radius: 8px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  width:60%;
+}
+
+.divInput{
+
+  margin:auto;
+  text-align:center;
+}
+
+.welcom{
+  margin-top: 20%;
+  margin-bottom: 10px;
+  text-align:center;
+}
+h1{
+  color :white;
+}
+
+.logo{
+  border-radius: 8px;
+}
+
+
+.card-title{
+  margin-top: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
