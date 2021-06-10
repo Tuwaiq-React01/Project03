@@ -2,7 +2,7 @@ import "./App.css";
 // import NavBar from "./components/NavBar";
 import Favorite from "./components/Favorite";
 import Footer from "./components/Footer";
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AllGames from "./components/AllGames";
 import Search from "./components/Search";
@@ -12,6 +12,7 @@ import { BsFillHeartFill } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
 import { AiFillInfoCircle } from "react-icons/ai";
 import About from "./components/About";
+import FacebookLogin from "react-facebook-login";
 
 function App() {
   // let games = [
@@ -23,6 +24,9 @@ function App() {
   // ];
   const [fav, setFav] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [name, setName] = useState("");
+  const [token, setToken] = useState("");
+  const [email, setEmail] = useState("");
 
   const addToFav = (game) => {
     console.log(game);
@@ -32,22 +36,37 @@ function App() {
     } else {
       setFav([...fav, game]);
     }
+  };
+
+
+  const setInfo = (n, t, e) => {
+    console.log('OOOOOOOOO', n);
+    setName(n);
+    setToken(t);
+    setEmail(e);
   }
+
+
 
   const removeAll = () => {
     setFav([]);
-  }
-  const removeFav = (game) =>  {
-    const getIndex = fav.findIndex(x => x.id == game.id)
-    fav.splice(getIndex, 1)
-    setFav([...fav])
-    console.log("SETTING NOW! " , fav);
-  }
+  };
+  const removeFav = (game) => {
+    const getIndex = fav.findIndex((x) => x.id == game.id);
+    fav.splice(getIndex, 1);
+    setFav([...fav]);
+    console.log("SETTING NOW! ", fav);
+  };
 
-
-  const searchButton = () => {
-    // console.log("test");
-  }
+  const responseFacebook = (response) => {
+    if (localStorage.getItem("token")) {
+      setName(response.name);
+      setEmail(response.email);
+      setToken(response.accessToken);
+    } else {
+      console.log("you are not singned in");
+    }
+  };
 
   return (
     <>
@@ -82,12 +101,13 @@ function App() {
                     </Link>
                   </li>
                   <li class="nav-item mx-4">
-                  <Link className="nav-link" to="/about">
+                    <Link className="nav-link" to="/about">
                       <AiFillInfoCircle size={30} /> About
                     </Link>
                   </li>
-                  <li></li>
+                  
                 </ul>
+                
                 <form class="d-flex">
                   <input
                     class="form-control me-sm-2 m-2"
@@ -100,18 +120,25 @@ function App() {
                     <button
                       class="btn btn-secondary my-2 my-sm-0"
                       type="submit"
-                      onClick={searchButton}
                     >
                       Search
                     </button>
                   </Link>
+
+                    {token? <Link className="nav-link text-light" to="/logout">
+                       LOGOUT
+                    </Link> : null}
+
+
+
+
                 </form>
               </div>
             </div>
           </nav>
 
           <Switch>
-            <Route exact path="/" render={() => <HomePage />} />
+            <Route exact path="/" render={() => <HomePage setInfo={setInfo} />} />
 
             <Route
               exact
@@ -129,18 +156,22 @@ function App() {
               )}
             />
 
-<Route exact path="/about" render={() => <About />} />
-
+            <Route exact path="/about" render={() => <About />} />
 
             <Route
               path="/search"
               render={() => <Search target={searchInput} addToFav={addToFav} />}
             />
+
+<Route
+              path="/logout"
+              render={() => <HomePage setInfo={setInfo} />}
+            />
           </Switch>
         </div>
       </Router>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,18 @@
 # GameReview (Functional)
 
 ### PROJECT3: 
-Built using
-- React JS (Functional Components)
-- Bootsrap
-- Axios
+Built using:
+
+ - [x] React JS:
+	 - [x] React Function Components.
+	 - [x] react-router-dom
+ - [x] Hooks:
+	 - [x] UseState
+	 - [x] UseEffect
+	 - [x] UseRef
+ - [x] Bootstrap
+ - [x] Axios
+ - [x] Third-party-Authentication
 
 ## DEMO PICTURE:
 ![demo1](./demo0.png)
@@ -16,12 +24,10 @@ Built using
 ![demo1](./demo2.gif)
 
 
-<br />
-<b> Student:</b>  Mohammed Rashed Albalawi.
-<br />
-<b> Group:</b>  Al-qiddiyah.
-<br />
-<b> Group Supervisor:</b>  Noorah Abdullah.
+
+### <b> Student:</b>  Mohammed Rashed Albalawi.
+### <b> Group:</b>  Al-qiddiyah.
+### <b> Group Supervisor:</b>  Noorah Abdullah.
 
 
 <br />
