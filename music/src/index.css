@@ -1,0 +1,33 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply hover:underline
+}
+.cards {
+  @apply hover:-translate-y-2 transform ease-in duration-300 border border-gray-200 rounded-lg shadow-lg
+}
+.cards-img{
+  @apply  h-48 bg-center bg-no-repeat bg-cover
+}
+.cards-info{
+  line-break: anywhere;
+}
+.cards-info h1{
+  @apply text-base font-bold leading-tight
+}
+.cards-info h5{
+  @apply text-gray-600 text-xs
+}
+.circle-img{
+  /* background-image: url(https://image.freepik.com/free-vector/hand-drawn-finger-heart_23-2148616432.jpg); */
+  @apply rounded-full w-24 h-24 shadow-xl bg-center bg-contain m-auto
+}
+.fb-btn{
+  position: absolute;               
+   top: 50%;   
+   left: 50% ;                    
+   transform: translate(-50%, -50%);
+}
