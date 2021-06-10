@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Nav from './components/MyNavBar';
 import Home from './Home'
 import Login from './components/Login';
 import About from './components/About';
@@ -11,40 +9,28 @@ import MyNavBar from './components/MyNavBar';
 
 function App() {
 
-  //hooks
   const [universities, setUniversities] = useState([])
-  const [searchInput, setSearchInput] = useState('')
 
   useEffect(() => {
-    alert(`Semilar Universities as ${searchInput}`)
-  }, [universities]) //RERENDER 
+    getUni();
+  }, [])  
 
-  //function and var
-  
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.get(`http://universities.hipolabs.com/search?country=United+States&query=${searchInput}`)
+  const getUni = () => {
+    axios.get(`http://universities.hipolabs.com/search?country=United+States`)
       .then(res => {
-        console.log(res.data);
+        
         setUniversities([...res.data])
       })
   }
-
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    setSearchInput(e.target.value)
-  }
-
   return (
     <div className="row">
       <Router>
         <MyNavBar />
         <Switch>
-          <Route exact path="./components/Login" component={Login} />
-          <Route exact path="/components/About" component={About} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/" >
-            <Home universities={universities} handleSubmit={handleSubmit} handleChange={handleChange}/>
+            <Home universities={universities} />
           </Route>
         </Switch>
       </Router>
