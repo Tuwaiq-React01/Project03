@@ -1,20 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function Games(props) {
   const [games, setGames] = useState([]);
   const [favs, setFavs] = useState([]);
   const favMode = props.favMode;
+  const prevFavsRef = useRef(true);
+
 
   useEffect(() => {
     console.log("aaaaaaaaaa", favs);
-
     setGames(props.list);
-  });
+    
 
-  useEffect(() => {
-    console.log("JJJJJJJJJJJJ", favs);
-    props.addToFav(favs);
-  }, [favs])
+    if (prevFavsRef.current) {
+      prevFavsRef.current = false;
+    } else {
+        console.log("JJJJJJJJJJJJ", favs);
+        props.addToFav(favs);
+    }
+
+  }, [favs]);
+
+
+
+  // useEffect(() => {
+  //   console.log("JJJJJJJJJJJJ", favs);
+    // props.addToFav(favs);
+  // }, [favs])
+
+
 
   const addFav = (game) => {
     setFavs(game);
@@ -39,8 +53,7 @@ export default function Games(props) {
           <div className="card-body">
             <h5 className="card-title"> {game.name} </h5>
             <p className="card-text">
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
+
             </p>
 
             <div className="rating">Rating: <div className={`rate ${
