@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Contact from './Contact';
+import Instructions from './Instructions';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
@@ -15,7 +15,7 @@ import {
 ReactDOM.render(
   <Router>
     <Route exact path="/" component={App} />
-    <Route exact path="/contact" component={Contact} />
+    <Route exact path="/instructions" component={Instructions} />
     {/* <Route path="/logout" component={App} /> */}
   </Router>,
   document.getElementById('root')

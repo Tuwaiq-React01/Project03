@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import Navbar from './Navbar';
 import { useEffect, useState } from 'react'
+import FacebookLogin from 'react-facebook-login';
 
 
 export default function App() {
@@ -18,9 +19,27 @@ export default function App() {
   const [showWheel, setShowWheel] = useState(false)
   const [OKClicked, setOKClicked] = useState(false)
   const [data, setData] = useState([])
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [picture, setPicture] = useState("")
+  const [token, setToken] = useState("")
+
+  const responseFacebook = (response) => {    
+    setToken(response.accessToken)
+    setName(response.name)
+    setEmail(response.email)
+    setPicture(response.picture)
+    console.log(response)
+  }
+
 
   useEffect(() => {
-    console.log("useEffect");
+    if (localStorage.getItem("token")) {
+      setName(localStorage.getItem("name"))
+      setEmail(localStorage.getItem("email"))
+      setPicture(localStorage.getItem("picture"))
+      setToken(localStorage.getItem("token"))
+    }
   }, [])
 
   const callApi = (randomColor, length) => {
@@ -69,24 +88,33 @@ export default function App() {
         <div className="App-header">
           <h1 className="display-4 text-muted">Tuwaiq Random Picker</h1>
           <img src={logo} width="130" height="100" className="rounded mx-auto d-block mb-4" />
-          {OKClicked ? null :
+          {!token?
+            <FacebookLogin
+              appId="239056987553093"
+              autoLoad={false}
+              fields="name,email,picture"
+              callback={responseFacebook} /> :
             <div>
-              {itemsList.map((element, index) => (
-                <Item item={element} key={index} />
-              ))}
-              <div className="input-group input-group-sm mb-3">
-                <div className="input-group-prepend">
+              {OKClicked ? null :
+                <div>
+                  {itemsList.map((element, index) => (
+                    <Item item={element} key={index} />
+                  ))}
+                  <div className="input-group input-group-sm mb-3">
+                    <div className="input-group-prepend">
+                    </div>
+                    <input type="text" placeholder="Add your item here!!" onChange={(e) => setNewItem(e.target.value)} value={newItem} className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" />
+                  </div>
+                  <button type="button" className="btn btn-warning" onClick={(e) => newItem !== "" ? addTheItem(e) : null}>ADD</button>
+                  <button type="button" className="btn btn-warning mx-3" onClick={(e) => itemsList.length < 2 ? null : showTheWheel(e)}>SPIN</button>
                 </div>
-                <input type="text" placeholder="Add your item here!!" onChange={(e) => setNewItem(e.target.value)} value={newItem} className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" />
+              }
+              <div>
+                {(showWheel && (data.length == itemsList.length)) ? <Wheel itemsList={itemsList} colors={data} /> : null}
               </div>
-              <button type="button" className="btn btn-warning" onClick={(e) => newItem !== "" ? addTheItem(e) : null}>ADD</button>
-              <button type="button" className="btn btn-warning mx-3" onClick={(e) => itemsList.length < 2 ? null : showTheWheel(e)}>SPIN</button>
+              <button type="button" className="btn btn-danger mt-3" onClick={(e) => hideWheel(e)}>Restart</button>
             </div>
           }
-          <div>
-            {(showWheel && (data.length == itemsList.length)) ? <Wheel itemsList={itemsList} colors={data} /> : null}
-          </div>
-          <button type="button" className="btn btn-danger mt-3" onClick={(e) => hideWheel(e)}>Restart</button>
         </div>
       </div>
     </div>

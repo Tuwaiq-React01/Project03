@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App';
-import Contact from './Contact';
+import Instructions from './Instructions';
 
 import {
     BrowserRouter as Router,
@@ -20,7 +20,7 @@ export default function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link active" href="#"><Link to="/">Home</Link></a>
-                        <a class="nav-item nav-link" href="#"><Link to="/contact">Contact</Link></a>
+                        <a class="nav-item nav-link" href="#"><Link to="/instructions">Instructions</Link></a>
                         {/* <a class="nav-item nav-link" href="#"><Link onClick={logout} to="/logout">Logout</Link></a> */}
                     </div>
                 </div>
