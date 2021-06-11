@@ -15,13 +15,7 @@
 <img src="Tuwaiq Random Picker5.gif" />
 
  
-
-
-
-
 When the user enters a single item, the wheel will not appear. There must 2 items to choose among at least. 
-
-<img src="Tuwaiq Random Picker1.gif" />
 
 # API used in this project:
 
