@@ -24,16 +24,22 @@ export default function App() {
   const [picture, setPicture] = useState("")
   const [token, setToken] = useState("")
 
-  const responseFacebook = (response) => {    
+  const responseFacebook = (response) => {
     setToken(response.accessToken)
     setName(response.name)
     setEmail(response.email)
     setPicture(response.picture)
+    console.log("name1" + name);
+    console.log("name2" + response.name);
     console.log(response)
   }
 
+  //setName("Ammola")
+  //console.log("name 3" + name)
+
 
   useEffect(() => {
+    console.log("component did mount")
     if (localStorage.getItem("token")) {
       setName(localStorage.getItem("name"))
       setEmail(localStorage.getItem("email"))
@@ -41,6 +47,17 @@ export default function App() {
       setToken(localStorage.getItem("token"))
     }
   }, [])
+
+  useEffect(() => {
+    console.log("component did update")
+    if(token){
+      console.log("there is a token")
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("token", token);
+      localStorage.setItem("picture", picture);
+    }
+  })
 
   const callApi = (randomColor, length) => {
     axios({
@@ -50,7 +67,7 @@ export default function App() {
       console.log("Inside the response!!!")
       console.log(response.data);
       setData(response.data.colors)
-
+      console.log(data)
 
     }).catch((error) => {
       console.log(error);
@@ -88,7 +105,7 @@ export default function App() {
         <div className="App-header">
           <h1 className="display-4 text-muted">Tuwaiq Random Picker</h1>
           <img src={logo} width="130" height="100" className="rounded mx-auto d-block mb-4" />
-          {!token?
+          {!token ?
             <FacebookLogin
               appId="239056987553093"
               autoLoad={false}
@@ -166,7 +183,7 @@ export default function App() {
 //     e.preventDefault();
 
 //     this.setState({
-//       itemsList: this.state.itemsList.concat(this.state.newItem),
+//       itemsList: itemsList.concat(newItem),
 //       newItem: ""
 //     })
 //   }
@@ -177,10 +194,10 @@ export default function App() {
 
 //   showWheel(e) {
 //     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-//     let length = this.state.itemsList.length;
+//     let length = itemsList.length;
 //     this.callApi(randomColor, length);
-//     console.log("this.state.data.length");
-//     console.log(this.state.data.length);
+//     console.log("data.length");
+//     console.log(data.length);
 //     this.setState({
 //       showWheel: true,
 //       OKClicked: true
@@ -196,14 +213,14 @@ export default function App() {
 //   }
 
 //   render() {
-//     let itemsList = this.state.itemsList.map((element, index) => (
+//     let itemsList = itemsList.map((element, index) => (
 //       <Item item={element} key={index} />
 //     ))
-//     console.log(this.state.showWheel && (this.state.data.length == this.state.itemsList.length));
+//     console.log(showWheel && (data.length == itemsList.length));
 
-//     console.log(this.state.showWheel);
-//     console.log(this.state.data.length);
-//     console.log(this.state.itemsList.length);
+//     console.log(showWheel);
+//     console.log(data.length);
+//     console.log(itemsList.length);
 
 //     return (
 //       <div className="App">
@@ -211,20 +228,20 @@ export default function App() {
 //           {/* <Navbar></Navbar> */}
 //           <h1 className="display-4 text-muted">Tuwaiq Random Picker</h1>
 //           <img src={logo} width="130" height="100" className="rounded mx-auto d-block mb-4" />
-//           {this.state.OKClicked ? null :
+//           {OKClicked ? null :
 //             <div>
 //               {itemsList}
 //               <div className="input-group input-group-sm mb-3">
 //                 <div className="input-group-prepend">
 //                 </div>
-//                 <input type="text" placeholder="Add your item here!!" onChange={(e) => this.onChangeText(e)} value={this.state.newItem} className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" />
+//                 <input type="text" placeholder="Add your item here!!" onChange={(e) => this.onChangeText(e)} value={newItem} className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" />
 //               </div>
-//               <button type="button" className="btn btn-warning" onClick={(e) => this.state.newItem !== "" ? this.addTheItem(e) : null}>ADD</button>
-//               <button type="button" className="btn btn-warning mx-3" onClick={(e) => this.state.itemsList.length < 2 ? null : this.showWheel(e)}>SPIN</button>
+//               <button type="button" className="btn btn-warning" onClick={(e) => newItem !== "" ? this.addTheItem(e) : null}>ADD</button>
+//               <button type="button" className="btn btn-warning mx-3" onClick={(e) => itemsList.length < 2 ? null : this.showWheel(e)}>SPIN</button>
 //             </div>
 //           }
 //           <div>
-//             {(this.state.showWheel && (this.state.data.length == this.state.itemsList.length)) ? <Wheel itemsList={this.state.itemsList} colors={this.state.data} /> : null}
+//             {(showWheel && (data.length == itemsList.length)) ? <Wheel itemsList={itemsList} colors={data} /> : null}
 //           </div>
 //           <button type="button" className="btn btn-danger mt-3" onClick={(e) => this.hideWheel(e)}>Restart</button>
 //         </div>
