@@ -16,7 +16,7 @@ ReactDOM.render(
   <Router>
     <Route exact path="/" component={App} />
     <Route exact path="/instructions" component={Instructions} />
-    {/* <Route path="/logout" component={App} /> */}
+    <Route path="/logout" component={App} />
   </Router>,
   document.getElementById('root')
 );

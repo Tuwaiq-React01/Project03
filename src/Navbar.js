@@ -10,6 +10,10 @@ import {
   
 export default function Navbar() {
 
+    const logout = () => {
+        localStorage.clear()
+    }
+
     return (
         <div>            
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +25,7 @@ export default function Navbar() {
                     <div class="navbar-nav">
                         <a class="nav-item nav-link active" href="#"><Link to="/">Home</Link></a>
                         <a class="nav-item nav-link" href="#"><Link to="/instructions">Instructions</Link></a>
-                        {/* <a class="nav-item nav-link" href="#"><Link onClick={logout} to="/logout">Logout</Link></a> */}
+                        <a class="nav-item nav-link" href="#"><Link onClick={logout} to="/logout">Logout</Link></a>
                     </div>
                 </div>
             </nav>
