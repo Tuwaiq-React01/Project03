@@ -1,36 +1,17 @@
 import { createEvent } from '@testing-library/dom';
-import React, { Component } from 'react'
+import React, { useEffect } from 'react';
 
-export default class Wheel extends Component {
+export default function Wheel(props) {
 
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-
-        const itemsList = this.props.itemsList;
-        const colors = this.props.colors;
-        //let length = this.state.itemsList.length;
-        
-        // let constColors = theColors.map(function (element, index) {
-        //     theColors[index] = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        //     console.log(theColors[index]);
-        // })
-        console.log("jjjjjjjjjj");
-        console.log(colors);
-        //let randomColors = this.state.data.colors;
-        //console.log(randomColors);
-        let sectors = itemsList.map(function (element, index) {
+    useEffect(() => {
+        const colors = props.colors;
+        const sectors = props.itemsList.map(function (element, index) {
             return { label: element, color: colors[index].hex.value }
         });
-        //console.log("kakkkakakakak");
-        //console.log(colors);
 
         const rand = (m, M) => Math.random() * (M - m) + m;
         const tot = sectors.length;
         const EL_spin = document.querySelector("#spin");
-        console.log(EL_spin);
         const ctx = document.querySelector("#wheel").getContext('2d');
         const dia = ctx.canvas.width;
         const rad = dia / 2;
@@ -41,7 +22,6 @@ export default class Wheel extends Component {
         const friction = 0.991; // 0.995=soft, 0.99=mid, 0.98=hard
         let angVel = 0; // Angular velocity
         let ang = 0; // Angle in radians
-
         const getIndex = () => Math.floor(tot - ang / TAU * tot) % tot;
 
         function drawSector(sector, i) {
@@ -86,23 +66,19 @@ export default class Wheel extends Component {
             requestAnimationFrame(engine)
         }
 
-        // INIT
+
         sectors.forEach(drawSector);
-        console.log(sectors);
         rotate(); // Initial rotation
         engine(); // Start engine
         EL_spin.addEventListener("click", () => {
             if (!angVel) angVel = rand(0.25, 0.35);
         });
 
-    }
-
-    render() {
-        return (
-            <div id="wheelOfFortune" >
-                <canvas id="wheel" width="400" height="400"></canvas>
-                <div id="spin">SPIN</div>
-            </div>
-        )
-    }
+    }, [])
+    return (
+        <div id="wheelOfFortune" >
+            <canvas id="wheel" width="400" height="400"></canvas>
+            <div id="spin">SPIN</div>
+        </div>
+    )
 }

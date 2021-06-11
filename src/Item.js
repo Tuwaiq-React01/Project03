@@ -1,17 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Item extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            item:props.item
-        }
-    }
-    render() {
-        return (
-            <div>
-                <li>{this.props.item}</li>
-            </div>
-        )
-    }
+export default function Item(props) {
+    return (
+        <div>
+            <li>{props.item}</li>
+        </div>
+    )
 }
