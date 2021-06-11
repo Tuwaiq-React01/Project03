@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Route,Link,BrowserRouter as Router, Switch} from 'react-router-dom'
+import PageNotFound from './Components/PageNotFound';
+import NavB from "./Components/NavB";
+import Contact from './Components/Contact';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <NavB/>
+    <Switch>
+      <Route exact path="/" component={App}/>
+      <Route  path="/Contact" component={Contact}/>
+      <Route path="/logout" component={App} />
+      <Route component={PageNotFound}/>
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 
