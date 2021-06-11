@@ -1,12 +1,13 @@
 
 import React from 'react'
 import UniversitiesList from './components/UniversitiesList'
-import Search from './components/Search'
+
 
 
 export default function Home(props) {
     return (
-        <div>
+        <div className="Home">
+          
             <UniversitiesList universities={props.universities}/>
         </div>
     )

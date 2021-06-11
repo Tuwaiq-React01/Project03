@@ -24,16 +24,20 @@ export default function Login() {
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
-        <br></br>
+ 
 
         {token ?
-          <div>
-            <h3>Welcome {name}</h3>
+          <div className="Welcome">
+
+            <h3>Welcome {name}</h3> <i class="material-icons">check_circle</i>
             <h5>The email {email} is authorized</h5>
+            <a class= "waves-effect waves-light btn" style={{marginBottom: "33px" , marginLeft:"10px"}} >Likes</a>
+            <a class= "waves-effect waves-light btn" style={{marginBottom: "33px", marginLeft:"10px"}}>Completed Applications</a>
+
+
             <br></br>
           </div> : <FacebookLogin
-            appId="135275661915406"
+            appId="177042800936045"
             autoLoad={false}
             fields="name,email"
             callback={responseFacebook} />}

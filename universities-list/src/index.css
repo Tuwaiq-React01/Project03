@@ -5,9 +5,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://images.unsplash.com/photo-1538947117537-48239ec91f18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80');
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.heart {
+  width: 50px !important;
+  height: 40px;
+  margin-bottom: 2px;
+  padding-left: 10px;
+  padding-top: 5px;
+
+
+}
+ .done {
+  width: 50px !important;
+  height: 40px;
+  margin-bottom: 2px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 10px;
+
+
+}
+.card{
+  background: rgb(228, 221, 221);
+  width: 20em;
+  border-radius: 0.6em;
+  margin: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+  transition: all ease 200ms;
+}
+
+.About , .Welcome{
+  background-color: rgb(211, 177, 194);
+  margin-top: 200px;
+  color: rgb(0, 0, 0);
+  opacity: 0.8;
+
+}
+
+.Home{
+background-color: rgb(159, 182, 181);  
+}
+a{
+background-color: rgba(255, 255, 255, 0.096);}
