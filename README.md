@@ -12,3 +12,10 @@
 يجب إرفاق صورة من المشروع في ملف README.md
   
 </div>
+
+
+# Demo
+
+![alt text](https://github.com/anas-alhmoud/Project02/blob/main/demo-1.png?raw=true)
+![alt text](https://github.com/anas-alhmoud/Project02/blob/main/demo-2.png?raw=true)
+![alt text](https://github.com/anas-alhmoud/Project02/blob/main/demo-3.png?raw=true)
