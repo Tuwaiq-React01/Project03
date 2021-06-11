@@ -1,0 +1,77 @@
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#wheelOfFortune {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+#wheel {
+  display: block;
+}
+
+#spin {
+  font: 1.5em/0 sans-serif;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  margin: -15%;
+  background: #fff;
+  color: #fff;
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+#spin::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  border: 10px solid transparent;
+  border-bottom-color: currentColor;
+  border-top: none;
+}
