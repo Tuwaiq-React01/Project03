@@ -1,0 +1,52 @@
+.MovieInfo {
+  /* display: flex;
+  flex-direction: row; */
+  width: 200px;
+  margin-bottom: 20px;
+  /* padding: 10px; */
+  border-radius: 8px;
+  margin: 20px;
+  background-color: #222222;
+}
+
+.MovieInfo:hover {
+  transform: scale(1.03);
+}
+.poster {
+  border-radius: 8px;
+}
+p {
+  display: inline;
+}
+.details {
+  padding: 10px;
+  display: flex;
+  color: aliceblue;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.MovieName {
+  /* color: chartreuse; */
+  color: #00897b;
+  font-weight: 600;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+}
+.infoTitle {
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+button {
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+}
