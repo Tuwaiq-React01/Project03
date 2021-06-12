@@ -8,7 +8,10 @@
 - استخدام Third-Party-Authentication 
 - استخدام دالتين على الأقل من دوال Hooks
 
-### ملاحظة
-يجب إرفاق صورة من المشروع في ملف README.md
+<img src="./1.png" alt="drawing"/>
+<br>
+<br>
+<br>
+<img src="./2.png" alt="drawing"/>
   
 </div>
