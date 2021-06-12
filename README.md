@@ -1,10 +1,17 @@
 # Quiz App ✏️
 
-The idea of this project is quesions & answers ( andomly change) to test yourself, it's for fun 🥂. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The idea of this project is quesions & answers to test yourself, it's for fun 🥂. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Update 🛑
+
+- Create and add API of questions
+- Convert class components to hooks
+- Add authentication Login
+- Add `react-router-dom `
 
 
 ## ScreenShots 📸
-<img width="849" alt="Quiz App" src="https://user-images.githubusercontent.com/82483633/120875641-8d947000-c5b5-11eb-8cd1-606c98e355e4.png">
+<img width="1270" alt="Screenshot 2021-06-12 at 22 27 24" src="https://user-images.githubusercontent.com/82483633/121787193-61887880-cbcd-11eb-84d9-119ea4eea444.png">
 
 
 ## Available Scripts
