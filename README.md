@@ -1,4 +1,4 @@
- In this project I developed the last project by converting all classes to functions and learn how to deal with them, also I used react-router-dom library and Third-Party-Authentication with facebook and I used Hooks functions.
+ In this project I developed the last project by converting all classes to functions and learn how to deal with them, Also I used react-router-dom library and Third-Party-Authentication with facebook and I used Hooks functions.
  
  
  <div dir="rtl">
