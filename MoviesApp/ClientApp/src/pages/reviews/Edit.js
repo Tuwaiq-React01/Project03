@@ -1,71 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from "react-router-dom";
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import axios from 'axios';
 
-export default class edit extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            movie: this.props.location.state.movie,
-            review: {
-            ID: this.props.location.state.review.id,
-            MovieID: this.props.location.state.review.movieID,
-            Author: this.props.location.state.review.author,
-            Content: this.props.location.state.review.content
-        }, redirect: false};
-    }
+function Edit(props) {
+    const [movie, setMovie] = useState(props.location.state.movie);
+    const [redirect, setRedirect] = useState(false);
+    const [review, setReview] = useState({
+        ID: props.location.state.review.id,
+        MovieID: props.location.state.review.movieID,
+        Author: props.location.state.review.author,
+        Content: props.location.state.review.content
+    });
 
-    render() {
-        if(this.state.redirect) {
-            return <Redirect to = {{ pathname: "/"}} />;
-        }
-
-        const review = this.state.review;
-
-        return (
-            <Col xs={12}>
-                <Form>
-                    <FormGroup>
-                        <Label>Name</Label>
-                        <Input type="text" name="author" id="author" value={review.Author} placeholder="Author name" onChange={(event) => this.updateAuthor(event)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label>Review</Label>
-                        <Input style={{whiteSpace: "pre-wrap"}} type="textarea" name="content" id="content" value={review.Content} placeholder="content" onChange={(event) => this.updateContent(event)}/>
-                    </FormGroup>
-                    <Button onClick={() => this.updateReview()} color="primary">Submit</Button>
-                </Form>
-            </Col>
-        )
-    }
-
-    updateAuthor(event) {
-        const review = {
-            ID: this.state.review.ID,
-            MovieID: this.state.review.MovieID,
+    const updateAuthor = (event) => {
+        const result = {
+            ID: review.ID,
+            MovieID: review.MovieID,
             Author: event.target.value,
-            Content: this.state.review.Content
+            Content: review.Content
         };
 
-        this.setState({review: review});
+        setReview(result);
     }
-    updateContent(event) {
-        const review = {
-            ID: this.state.review.ID,
-            MovieID: this.state.review.MovieID,
-            Author: this.state.review.Author,
+
+    const updateContent = (event) => {
+        const result = {
+            ID: review.ID,
+            MovieID: review.MovieID,
+            Author: review.Author,
             Content: event.target.value
         };
 
-        this.setState({review: review});
+        setReview(result);
     }
 
-    async updateReview() {
-        const review = this.state.review;
-        const movie = this.state.movie;
-
+    const updateReview = async () => {
         movie.reviews.$values = movie.reviews.$values.filter((value, index) => {
             return value.id == review.ID ? review : value;
         });
@@ -82,6 +52,29 @@ export default class edit extends Component {
             console.error(`Error message: ${error}`);
         });
         
-        this.setState({movie: movie, redirect: true});
+        setRedirect(true);
     }
+
+    if(redirect) {
+        return <Redirect to = {{ pathname: "/"}} />;
+    }
+
+    return (
+        <Col xs={12}>
+            <Form>
+                <FormGroup>
+                    <Label>Name</Label>
+                    <Input type="text" name="author" id="author" value={review.Author} placeholder="Author name" onChange={updateAuthor}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label>Review</Label>
+                    <Input style={{whiteSpace: "pre-wrap"}} type="textarea" name="content" id="content" value={review.Content} placeholder="content" onChange={updateContent}/>
+                </FormGroup>
+                <Button onClick={updateReview} color="primary">Submit</Button>
+            </Form>
+        </Col>
+    )
 }
+
+export default Edit;
+

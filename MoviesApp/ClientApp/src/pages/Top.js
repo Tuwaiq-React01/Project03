@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Movie from '../components/Movie';
 import axios from 'axios';
 
-export default class Top extends Component {
-    static displayName = Top.name;
+function Top() {
+    const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    constructor(props) {
-        super(props);
-        this.state = { movies: [], loading: true };
-    }
-    
-    componentDidMount() {
-        this.populateTopMovies();
-    }
+    useEffect(() => {
+        populateTopMovies();
+    }, []);
 
-    static renderTopTenMovies(movies) {
+    const renderTopTenMovies = (movies) => {
         if(movies.length == 0) {
             return <h1>No movies yet</h1>
         }
@@ -29,26 +25,29 @@ export default class Top extends Component {
             </>
         );
     }
-
-    render() {
-        let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : Top.renderTopTenMovies(this.state.movies);
-        
-        return (
-            <>
-                <div className="row w-100">
-                    <h1 className="w-100 text-center">Top 10 movies</h1>
-                </div>
-                <div className="row">
-                    {contents}
-                </div>
-            </>
-        )
-    }
-
-    async populateTopMovies() {
+    
+    const populateTopMovies = async () => {
         const { data } = await axios.get(process.env.REACT_APP_API + 'movies?top=true');
-        this.setState({ movies: data.$values, loading: false });
+        setMovies(data.$values);
+        setLoading(false);
     }
+
+    const contents = loading ?
+    <p><em>Loading...</em></p>
+    : renderTopTenMovies(movies);
+    
+    return (
+        <>
+            <div className="row w-100">
+                <h1 className="w-100 text-center">Top 10 movies</h1>
+            </div>
+            <div className="row">
+                {contents}
+            </div>
+        </>
+    )
+
+    
 }
+
+export default Top;

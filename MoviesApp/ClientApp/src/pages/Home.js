@@ -1,20 +1,16 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Movie from '../components/Movie';
 
-export default class Home extends Component {
-    static displayName = Home.name;
+function Home() {
+    const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    constructor(props) {
-        super(props);
-        this.state = { movies: [], loading: true };
-    }
-    
-    componentDidMount() {
-        this.populateMovies();
-    }
+    useEffect(() => {
+        populateMovies();
+    }, []);
 
-    static renderMovies(movies) {
+    const renderMovies = (movies) => {
         if(movies.length == 0) {
             return <h1>No movies yet</h1>
         }
@@ -30,25 +26,26 @@ export default class Home extends Component {
         );
     }
 
-    render() {
-        let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : Home.renderMovies(this.state.movies);
-        
-        return (
-            <>
-                <div className="row w-100">
-                    <h1 className="w-100 text-center">Browse Movies</h1>
-                </div>
-                <div className="row">
-                    {contents}
-                </div>
-            </>
-        )
+    const populateMovies = async () => {
+        const { data } = await axios.get(process.env.REACT_APP_API + 'movies');
+        setMovies(data.$values);
+        setLoading(false);
     }
 
-    async populateMovies() {
-        const { data } = await axios.get(process.env.REACT_APP_API + 'movies');
-        this.setState({ movies: data.$values, loading: false });
-    }
+    const contents = loading ?
+    <p><em>Loading...</em></p>
+    : renderMovies(movies);
+
+    return (
+        <>
+            <div className="row w-100">
+                <h1 className="w-100 text-center">Browse Movies</h1>
+            </div>
+            <div className="row">
+                {contents}
+            </div>
+        </>
+    );
 }
+
+export default Home;

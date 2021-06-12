@@ -1,52 +1,33 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import axios from 'axios';
 
-export default class Create extends Component {
-    constructor(props) {
-        super(props);
+function Create(props) {
+    const [author, setAuthor] = useState("");
+    const [content, setContent] = useState("");
 
-        this.state = {author: "", content: ""};
+    const updateAuthor = (event) => {
+        setAuthor(event.target.value);
     }
-    render() {
-        return (
-            <Col xs={12}>
-                <Form>
-                    <FormGroup>
-                        <Label>Name</Label>
-                        <Input type="text" name="author" id="author" value={this.state.author} placeholder="Author name" onChange={(event) => this.updateAuthor(event)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label>Review</Label>
-                        <Input type="textarea" name="content" id="content" value={this.state.content} placeholder="content" onChange={(event) => this.updateContent(event)}/>
-                    </FormGroup>
-                    <Button onClick={() => this.createReview()} color="primary">Submit</Button>
-                </Form>
-            </Col>
-        )
+    const updateContent = (event) => {
+        setContent(event.target.value);
     }
 
-    updateAuthor(event) {
-        this.setState({author: event.target.value, content: this.state.content});
-    }
-    updateContent(event) {
-        this.setState({author: this.state.author, content: event.target.value});
-    }
-
-    createReview() {
+    const createReview = () => {
         const review = {
-            MovieID: this.props.location.state.movie.id,
-            Author: this.state.author,
-            Content: this.state.content
+            MovieID: props.location.state.movie.id,
+            Author: author,
+            Content: content
         }
         
-        this.postReview(review);
-        this.setState({author: "", content: ""});
+        postReview(review);
+        setAuthor("");
+        setContent("");
     }
 
-    async postReview(review) {
+    const postReview = async (review) => {
         axios({
-            url: process.env.REACT_APP_API + `movies/${this.props.location.state.movie.id}/reviews`,
+            url: process.env.REACT_APP_API + `movies/${props.location.state.movie.id}/reviews`,
             method: "POST",
             data: review,
             headers: {
@@ -57,4 +38,23 @@ export default class Create extends Component {
             console.error(`Error message: ${error}`);
         });
     }
+
+    return (
+        <Col xs={12}>
+            <Form>
+                <FormGroup>
+                    <Label>Name</Label>
+                    <Input type="text" name="author" id="author" value={author} placeholder="Author name" onChange={updateAuthor}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label>Review</Label>
+                    <Input type="textarea" name="content" id="content" value={content} placeholder="content" onChange={updateContent}/>
+                </FormGroup>
+                <Button onClick={createReview} color="primary">Submit</Button>
+            </Form>
+        </Col>
+    )
 }
+
+export default Create;
+
