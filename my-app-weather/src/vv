@@ -1,0 +1,21 @@
+   Address[] addresses = new Address[] {
+                new(){Id = 1,City = "Riyadh"},
+                new(){Id = 2,City = "Jeddah"}
+            };
+            User[] users = new User[] {
+                new(){ Id = 1, Username = "foo" },
+                new() { Id = 2, Username = "bar" },
+                new() { Id = 3, Username = "baz" }
+            };
+            UserAddress[] userAddresses = new UserAddress[] {
+                new(){UserId=1, AddressId=1},
+                new(){UserId=1, AddressId=2},
+                new(){UserId=2, AddressId=1},
+                new(){UserId=2, AddressId=3},
+            };
+            modelBuilder.Entity<User>().HasData(users);
+            modelBuilder.Entity<Address>().HasData(addresses);
+            
+            modelBuilder.Entity<UserAddress>().HasKey(ua => new { ua.AddressId, ua.UserId });
+            modelBuilder.Entity<UserAddress>().HasData(userAddresses);
+        
