@@ -11,3 +11,5 @@
 ### ملاحظة
 يجب إرفاق صورة من المشروع في ملف README.md
 </div>
+
+![Website homepage](website_homepage.png)
