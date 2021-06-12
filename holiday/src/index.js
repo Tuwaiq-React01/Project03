@@ -4,22 +4,23 @@ import './index.css';
 import App from './App';
 import CA from "./CA"
 import Login from './Login'
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route , Link , Switch} from "react-router-dom";
 import "./App.css"
 ReactDOM.render(
+  
   <Router>
-    <ul>
-      <li>
-        <Link to="/">US</Link>
-      </li>
-      <li>
-        <Link to="/CA">CA</Link>
-      </li>
-      <li>
-        <Link to="/Login">Login</Link>
-      </li>
-    </ul>
+    <Navbar bg="light" variant="light">
+    <Navbar.Brand >Holiday</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link to="/" as={Link}>US</Nav.Link>
+      <Nav.Link to="/CA" as={Link}>CA</Nav.Link>
+      <Nav.Link to="/Login"as={Link} >Login</Nav.Link>
+    </Nav>
+    
+  </Navbar>
+  
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/CA" component={CA} />
