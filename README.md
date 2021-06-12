@@ -11,8 +11,8 @@
 ### ملاحظة
 يجب إرفاق صورة من المشروع في ملف README.md
   
- <div>
+
  ![screenshot](https://user-images.githubusercontent.com/82505723/121788439-fdb67d80-cbd5-11eb-949f-61dd9ea48c3a.png)
 
- </div>
+
 </div>
