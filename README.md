@@ -12,3 +12,10 @@
 يجب إرفاق صورة من المشروع في ملف README.md
   
 </div>
+
+![homepage](./images/i1.png)
+![homepage](./images/i2.png)
+![homepage](./images/i3.png)
+![homepage](./images/i4.png)
+![homepage](./images/i5.png)
+![homepage](./images/i6.png)
