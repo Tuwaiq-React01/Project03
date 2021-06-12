@@ -1,7 +1,11 @@
  In this project I convert all classes to functions and learn how to deal with them, also I used react-router-dom library and Third-Party-Authentication with facebook and I used Hooks functions.
  
+ 
  <div dir="rtl">
 
+ اسم المتدربه: ندى العتيبي
+ مجموعة: طويق
+ اسم المشرفه: لمياء القحطاني
  
 # مشروع الأسبوع الثالث | Project 03 
 ## الوصف
