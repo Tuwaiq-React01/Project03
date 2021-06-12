@@ -1,6 +1,5 @@
  <div dir="rtl">
-  <a href="https://ibb.co/kxLXw2y"><img src="https://i.ibb.co/56QLSh9/facebk.jpg" alt="facebk" border="0"></a>
-<a href="https://ibb.co/SwfbWhq"><img src="https://i.ibb.co/chY0MGz/facebkafter.jpg" alt="facebkafter" border="0"></a>
+ 
 اسم المتدرب : مشعل نجدي , 
 اسم المشرف : نوره محسن , 
 اسم المجموعة : نيوم 
