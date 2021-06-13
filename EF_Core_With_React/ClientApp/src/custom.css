@@ -1,0 +1,86 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.GamesContainer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 0px;
+}
+
+.GameComp {
+    display: flex;
+    margin: 10px;
+}
+
+.GameDetail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.bodyImage {
+  margin-top: -17px;
+
+    background-image: linear-gradient(#201641, #7d34c6);
+    background-size: cover;
+}
+
+.headerLight{
+  color: #fff;
+  text-shadow: 0px 0px 10px #c598f1, 0px 0px 7px #7d34c6;
+}
+
+.board{
+  color: #fff;
+
+  position: absolute;
+  width: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#201641;
+  padding:20px;
+  border-radius:7px;
+
+}.board img{
+  block-size: 100px;
+margin-top: 40px;
+border-radius: 30px;
+box-shadow: 0px 0px 10px #c598f1, 0px 0px 7px #7d34c6;
+
+}
+
+
+.GameContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.GameComp {
+  display: flex;
+  margin: 10px;
+}
+.GameDetail {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
