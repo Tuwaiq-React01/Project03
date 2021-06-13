@@ -12,3 +12,26 @@
 يجب إرفاق صورة من المشروع في ملف README.md
   
 </div>
+
+
+
+
+
+
+<p align="center">
+  <img src="https://github.com/1Riyad/Project03/blob/main/EF_Core_With_React/ClientApp/public/demo.gif" alt="demo"/>
+</p>
+
+
+ 
+ <br/> 
+<div dir="rtl" >
+  
+<br/>
+  
+##  معلومات المتدرب
+###  اسم المتدرب:  رياض الغامدي
+### اسم المشرف:  حاتم السلمان
+### اسم المجموعة:  الدرعية
+
+</div>
