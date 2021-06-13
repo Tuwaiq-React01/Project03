@@ -1,7 +1,8 @@
- <div dir="rtl">
-  # React with asp.NET  Project
+
+# React with asp.NET  Project
 ![image gif](image.gif)
- 
+
+<div dir="rtl">
 # مشروع الأسبوع الثالث | Project 03 
 ## الوصف
 في هذا المشروع، سيتم تحويل المشروع السابق التابع للأسبوع الثاني إلى function component مع تطبيق المتطلبات أدناه
